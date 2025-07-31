@@ -15,20 +15,29 @@
   padding-left: 1rem;
 }
 
-::ng-deep .mat-menu-panel {
-  background: #93D5FF !important;
-  border-radius: 8px;
+::ng-deep.mat-mdc-menu-panel{
+  margin-top: 1.7rem;
+  margin-left: 2rem;
 }
 
-::ng-deep .mat-menu-item {
-  color: #0a2c53 !important;
-  font-weight: bold;
+::ng-deep.mat-mdc-menu-panel .mat-mdc-menu-item {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0a2c53;
+  background: #c1e2f5;
+  font-size: 17px;
+  font-weight: 400;
+  padding: 20px 50px;
+  text-decoration: inherit;
+  text-transform: none;
+
 }
 
-::ng-deep .mat-menu-item:hover {
-  background: #e3e3e3 !important;
-  color: #1976d2 !important;
+::ng-deep .mat-mdc-menu-item:hover {
+  background: #e3e3e3;
+  color: #1976d2;
 }
+
+
 
 
 

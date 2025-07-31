@@ -1,21 +1,21 @@
   <mat-toolbar  class="toolbar">
-
+ <!--<img src="assets/logoEclesia.png" alt="Logo Eclesia" class="logo-eclesia" />-->
   <span class="title">Eclesia-Gestão ministerial</span>
   <span></span>
   <span class="spacer"></span>
-  <button matIconButton class="menu-icon" aria-label="icone do menu" [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon>
-  </button>
-    <mat-menu #menu="matMenu"  class="menu-lateral">
-      <a mat-menu-item href="#">Secretaria</a>
-      <a mat-menu-item href="#">Configurações</a>
-      <a mat-menu-item href="#">Sair</a>
-    </mat-menu>
 
   <a matIconButton class=" perfil-icon" aria-label="icone de perfil">
     <mat-icon>account_circle</mat-icon></a>
 
-  <a matIconButton class="notificacao-icon" aria-label="icone de notificações">
-    <mat-icon>notifications</mat-icon></a>
+    <a matIconButton class="notificacao-icon" aria-label="icone de notificações">
+      <mat-icon>notifications</mat-icon></a>
+      <button matIconButton class="menu-icon" aria-label="icone do menu" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>  </button>
+        <mat-menu #menu="matMenu" xPosition="before" class="menu-lateral">
+          <button mat-menu-item >Secretaria</button>
+          <button mat-menu-item >Configurações</button>
+          <button mat-menu-item >Sair</button>
+        </mat-menu>
 </mat-toolbar>
 
 

@@ -1,12 +1,13 @@
-
-<mat-grid-list cols="5" rowHeight="2:1">
-  <mat-grid-tile>Membros</mat-grid-tile>
-  <mat-grid-tile>Financeiro</mat-grid-tile>
-  <mat-grid-tile>Eventos</mat-grid-tile>
-  <mat-grid-tile>Mensagem do dia</mat-grid-tile>
-  <mat-grid-tile>Bíblia Sagrada</mat-grid-tile>
-  <mat-grid-tile>Comunicados</mat-grid-tile>
-  <mat-grid-tile>Estudos</mat-grid-tile>
-  <mat-grid-tile>Agenda pastoral</mat-grid-tile>
-
+<h1>Bem-vindo ao Eclesia Gestão Ministerial</h1>
+<p>escolha por onde começar</p>
+<mat-grid-list cols="5" rowHeight="100px" gutterSize= "50px">
+  <a routerLink="/membros"><mat-grid-tile ><mat-icon class="icon">group</mat-icon>Membros</mat-grid-tile></a>
+  <a routerLink="/Financeiro"><mat-grid-tile ><mat-icon class="icon">attach_money</mat-icon> Financeiro</mat-grid-tile></a>
+  <a routerLink="/Eventos"><mat-grid-tile ><mat-icon class="icon">calendar_month</mat-icon>Eventos</mat-grid-tile></a>
+  <a routerLink="/Mensagem"><mat-grid-tile ><mat-icon class="icon">wb_sunny</mat-icon> Mensagem <br>do dia</mat-grid-tile></a>
+  <a routerLink="/Bíblia Sagrada"><mat-grid-tile ><mat-icon class="icon">import_contacts</mat-icon> Bíblia Sagrada</mat-grid-tile></a>
+  <a routerLink="/Comunicados"><mat-grid-tile ><mat-icon class="icon">campaign</mat-icon> Comunicados</mat-grid-tile></a>
+  <a routerLink="/Estudos"><mat-grid-tile ><mat-icon class="icon">auto_stories</mat-icon> Estudos</mat-grid-tile></a>
+  <a routerLink="/Agenda pastoral"><mat-grid-tile ><mat-icon class="icon">today</mat-icon> Agenda pastoral</mat-grid-tile></a>
 </mat-grid-list>
+<router-outlet></router-outlet>

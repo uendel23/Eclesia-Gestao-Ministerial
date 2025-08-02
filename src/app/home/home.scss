@@ -3,10 +3,12 @@
 }
 
 .toolbar {
+  display: flex;
+  align-items: center;
   width: 100%;
   background-color: #93D5FF;
   color: #0a2c53;
-  height: 5.5rem;
+  height: 4rem;
 }
 
 .title{
@@ -14,6 +16,20 @@
   font-weight: calc(450 * 1.2);
   padding-left: 1rem;
 }
+
+.perfil-icon, .notificacao-icon, .menu-icon {
+font-size: 2rem;
+padding: 1rem 1rem;
+}
+
+::ng-deep .mat-mdc-icon-button {
+  margin-left: 1rem;
+  margin-bottom: 3rem;
+}
+
+
+
+
 
 ::ng-deep.mat-mdc-menu-panel{
   margin-top: 1.7rem;

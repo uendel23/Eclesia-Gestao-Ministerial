@@ -4,18 +4,19 @@
   <span></span>
   <span class="spacer"></span>
 
-  <a matIconButton class=" perfil-icon" aria-label="icone de perfil">
-    <mat-icon>account_circle</mat-icon></a>
+  <a matIconButton aria-label="icone de perfil">
+    <mat-icon class="perfil-icon" >account_circle</mat-icon></a>
 
-    <a matIconButton class="notificacao-icon" aria-label="icone de notificações">
-      <mat-icon>notifications</mat-icon></a>
-      <button matIconButton class="menu-icon" aria-label="icone do menu" [matMenuTriggerFor]="menu">
-        <mat-icon>menu</mat-icon>  </button>
-        <mat-menu #menu="matMenu" xPosition="before" class="menu-lateral">
-          <button mat-menu-item >Secretaria</button>
-          <button mat-menu-item >Configurações</button>
-          <button mat-menu-item >Sair</button>
-        </mat-menu>
+  <a matIconButton  aria-label="icone de notificações">
+    <mat-icon class="notificacao-icon">notifications</mat-icon></a>
+
+  <button matIconButton  aria-label="icone do menu" [matMenuTriggerFor]="menu">
+     <mat-icon class="menu-icon">menu</mat-icon>  </button>
+     <mat-menu #menu="matMenu" xPosition="before" class="menu-lateral">
+        <button mat-menu-item >Secretaria</button>
+        <button mat-menu-item >Configurações</button>
+        <button mat-menu-item >Sair</button>
+     </mat-menu>
 </mat-toolbar>
 
 

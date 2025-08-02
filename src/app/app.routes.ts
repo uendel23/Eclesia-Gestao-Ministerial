@@ -3,5 +3,6 @@ import { Home } from './home/home';
 
 
 export const routes: Routes = [
-  {path:'home', component: Home},
+  {path:'membros', component: Home},
+
 ];

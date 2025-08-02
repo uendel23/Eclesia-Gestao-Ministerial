@@ -1,14 +1,36 @@
-<img src="assets/Logotipo-Eclésia" alt="">
-<h1>Bem-vindo ao Eclésia Gestão Ministerial</h1>
-<p>escolha por onde começar</p>
-<mat-grid-list cols="5" rowHeight="100px" gutterSize= "50px">
-  <a routerLink="/membros"><mat-grid-tile ><mat-icon class="icon">group</mat-icon>Membros</mat-grid-tile></a>
-  <a routerLink="/Financeiro"><mat-grid-tile ><mat-icon class="icon">attach_money</mat-icon> Financeiro</mat-grid-tile></a>
-  <a routerLink="/Eventos"><mat-grid-tile ><mat-icon class="icon">calendar_month</mat-icon>Eventos</mat-grid-tile></a>
-  <a routerLink="/Mensagem"><mat-grid-tile ><mat-icon class="icon">wb_sunny</mat-icon> Mensagem <br>do dia</mat-grid-tile></a>
-  <a routerLink="/Bíblia Sagrada"><mat-grid-tile ><mat-icon class="icon">import_contacts</mat-icon> Bíblia Sagrada</mat-grid-tile></a>
-  <a routerLink="/Comunicados"><mat-grid-tile ><mat-icon class="icon">campaign</mat-icon> Comunicados</mat-grid-tile></a>
-  <a routerLink="/Estudos"><mat-grid-tile ><mat-icon class="icon">auto_stories</mat-icon> Estudos</mat-grid-tile></a>
-  <a routerLink="/Agenda pastoral"><mat-grid-tile ><mat-icon class="icon">today</mat-icon> Agenda pastoral</mat-grid-tile></a>
-</mat-grid-list>
+<div class="dashboard">
+  <img src="assets/Logotipo-Eclésia" alt="">
+  <h1>Bem-vindo ao Eclésia Gestão Ministerial</h1>
+  <p>escolha por onde começar</p>
+  <mat-grid-list cols="5" rowHeight="100px" gutterSize= "50px">
+    <a routerLink="/membros"><mat-grid-tile ><mat-icon class="icon">group</mat-icon>Membros</mat-grid-tile></a>
+    <a routerLink="/Financeiro"><mat-grid-tile ><mat-icon class="icon">attach_money</mat-icon> Financeiro</mat-grid-tile></a>
+    <a routerLink="/Eventos"><mat-grid-tile ><mat-icon class="icon">calendar_month</mat-icon>Eventos</mat-grid-tile></a>
+    <a routerLink="/Mensagem"><mat-grid-tile ><mat-icon class="icon">wb_sunny</mat-icon> Mensagem <br>do dia</mat-grid-tile></a>
+    <a routerLink="/Bíblia Sagrada"><mat-grid-tile ><mat-icon class="icon">import_contacts</mat-icon> Bíblia Sagrada</mat-grid-tile></a>
+    <a routerLink="/Comunicados"><mat-grid-tile ><mat-icon class="icon">campaign</mat-icon> Comunicados</mat-grid-tile></a>
+    <a routerLink="/Estudos"><mat-grid-tile ><mat-icon class="icon">auto_stories</mat-icon> Estudos</mat-grid-tile></a>
+    <a routerLink="/Agenda pastoral"><mat-grid-tile ><mat-icon class="icon">today</mat-icon> Agenda pastoral</mat-grid-tile></a>
+  </mat-grid-list>
+</div>
+
+<div class="atividades-recentes">
+  <h2>Atividades recentes</h2>
+  <ul>
+    <li>
+     <h3 class="novo-membro"><mat-icon >person_check</mat-icon> Novo membro ingressou</h3>
+     <P>Sarah Miller ingressou</P>
+    </li>
+    <li>
+      <h3><mat-icon>price_check</mat-icon> Donativo recebido</h3>
+      <P>$500 donativo recebido de David Luiz</P>
+    </li>
+    <li>
+      <h3><mat-icon>event</mat-icon> Evento adicionado</h3>
+      <p>congresso de jovens congregação paraiso 11 e 12 de outubro 2025</p>
+    </li>
+  </ul>
+</div>
+
+
 <router-outlet></router-outlet>

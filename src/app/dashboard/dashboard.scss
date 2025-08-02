@@ -1,4 +1,5 @@
-h1{
+
+ h1{
   display: flex;
   justify-content: center;
   margin:15rem 0 5rem 0;
@@ -8,7 +9,7 @@ h1{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-p {
+ p {
   display: flex;
   justify-content: center;
   font-size: 1.7rem;
@@ -18,7 +19,7 @@ p {
 
 
 mat-grid-list {
-  max-width: 50%;
+  max-width: 60%;
   margin: 0 auto;
 
 }
@@ -39,6 +40,43 @@ mat-grid-tile {
 
 }
 
-//::ng-deep .mat-grid-tile-content{
-//  margin-right: 2rem;
-//}
+/***************ATIVIDADES*********************/
+
+.atividades-recentes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 8rem 0rem 0 40rem;
+  text-align: center;
+}
+.atividades-recentes h2 {
+  font-size: 2rem;
+  color: #0a2c53;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.atividades-recentes ul{
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+}
+
+.atividades-recentes li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.atividades-recentes p {
+  font-size: 1.2rem;
+  color: #0276C4;
+  margin: 0.5rem 0;justify-content: flex-start;
+}
+

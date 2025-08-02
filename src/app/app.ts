@@ -4,6 +4,7 @@ import { Home } from "./home/home";
 import { Dashboard } from "./dashboard/dashboard";
 
 
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Home, Dashboard],

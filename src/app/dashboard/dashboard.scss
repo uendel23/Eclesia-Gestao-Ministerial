@@ -17,6 +17,22 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.grid-tile-button {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 1rem;
+  background: #F7FAFC;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #0276C4;
+   font-size: 1.3rem;
+}
+
 
 mat-grid-list {
   max-width: 60%;
@@ -24,11 +40,7 @@ mat-grid-list {
 
 }
 mat-grid-tile {
-  padding: 8px;
-  color: #0276C4;
-  font-weight: bold;
-  font-size: 1.3rem;
-  background: #F7FAFC;
+  padding: 6px;
   border-radius: 26px;
   margin-right: 1rem;
 }

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { Home } from "../home/home";
 @Component({
   selector: 'app-dashboard',
-  imports: [MatGridListModule, RouterOutlet,MatIconModule],
+  imports: [MatGridListModule, RouterOutlet, RouterLink, MatIconModule, Home],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })

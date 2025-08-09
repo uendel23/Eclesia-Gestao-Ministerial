@@ -1,3 +1,33 @@
-table {
+
+
+.membros-container {
+  width: 50%;
+  margin: 20px;
+  margin: 5rem auto;
+}
+.membros-container h2 {
+  text-align: center;
+  color: #0a2c53;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+membros-tabela {
   width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+.membros-tabela th {
+  font-size: 1rem;
+  background-color: #c7eaff;
+  color: #0a2c53;
+  font-weight: bold;
+  padding: 12px;
+  border: solid 0.5px #333;
+}
+.membros-tabela td {
+  font-size: 15px;
+  padding: 8px;
+  text-align: left;
+  border: solid 0.5px #0a2c53;
 }

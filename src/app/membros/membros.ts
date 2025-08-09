@@ -1,8 +1,15 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { Home } from "../home/home";
 import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule  } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableDataSource } from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
 
-export interface PeriodicElement{
+
+export interface membros{
   Id:number;
   nome: string;
   telefone: number;
@@ -10,7 +17,7 @@ export interface PeriodicElement{
   cargo?: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: membros[] = [
   {Id: 1, nome: 'Gilderson', telefone: 99999999, congregacao: 'cede',cargo: 'Presidente'},
   {Id: 2, nome: 'Gean', telefone:88888888, congregacao: 'paraiso',cargo: 'Tvice presidente'},
   {Id: 3, nome: 'Jamilo', telefone: 7777777, congregacao: 'Lagoa do Tió', cargo:"pastor"},
@@ -25,11 +32,49 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 @Component({
   selector: 'app-membros',
-  imports: [Home, MatTableModule],
+  imports: [Home,
+    MatTableModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+  ],
   templateUrl: './membros.html',
   styleUrl: './membros.scss'
 })
-export class Membros {
+export class Membros implements OnInit{
+   filtro: string = '';
   displayedColumns: string[] = ['Id', 'nome', 'telefone', 'congregacao' ,'cargo'];
-  dataSource = ELEMENT_DATA;
-}
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  ngOnInit() {
+    // Configura para buscar em nome, telefone, congregação e cargo
+    this.dataSource.filterPredicate = (data: membros, filter: string) => {
+      const texto = (
+        data.nome +
+        ' ' +
+        data.telefone +
+        ' ' +
+        data.congregacao +
+        ' ' +
+        data.cargo
+      ).toLowerCase();
+      return texto.includes(filter);
+    };
+  }
+
+
+  applyFilter(valor: string) {
+    this.dataSource.filter = valor.trim().toLowerCase();
+
+  };
+
+  openAddMemberDialog(){}
+  openEditMemberDialog(){}
+  deleteSelectedMembers(){};
+
+
+  }
+
+

@@ -12,6 +12,10 @@ Eclesia Gestão Ministerial é uma aplicação web desenvolvida em Angular para 
 - 📱 **Menu Responsivo:** Interface moderna com menu suspenso e navegação intuitiva.
 - 📊 **Painel de Controle:** Dashboard com visão geral das principais informações.
 
+  ---
+
+  ![teela principal](assets/dashboard.png)
+
 ## 🛠️ Tecnologias Utilizadas
 
 - [Angular CLI](https://angular.dev/tools/cli) (v20.1.3)

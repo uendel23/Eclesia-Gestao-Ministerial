@@ -1,57 +1,66 @@
 <app-home></app-home>
 
-<div class="membros-container">
-    <h2>Lista de membros</h2>
-    <mat-toolbar color="primary">
-      <span>Gerenciar Membros</span>
-    </mat-toolbar>
+    <div class="membros-container">
+        <h2>Lista de membros</h2>
 
-    <div class="membros-actions">
-      <button mat-raised-button  (click)="openAddMemberDialog()">Adicionar Membro</button>
-      <button mat-raised-button  (click)="openEditMemberDialog()">Editar Membro</button>
-      <button mat-raised-button  (click)="deleteSelectedMembers()">Excluir Selecionados</button>
+        <div class="membros-actions">
+          <button mat-raised-button  (click)="openAddMemberDialog()">Adicionar Membro</button>
+          <button mat-raised-button  (click)="openEditMemberDialog()">Editar Membro</button>
+        </div>
+
+        <div>
+          <mat-form-field appearance="fill" class="campo-busca">
+            <mat-label>Pesquisar Membro</mat-label>
+          <input class="entrada" matInput
+            [(ngModel)]="filtro"
+            (keyup)="applyFilter(filtro)"
+            placeholder="Digite o nome ou telefone">
+          </mat-form-field>
+        </div>
+
+        <h2>Lista de membros</h2>
+
+        <table mat-table [dataSource]="dataSource" class="membros-tabela">
+
+          <ng-container matColumnDef="Id">
+            <th mat-header-cell *matHeaderCellDef> N </th>
+            <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="telefone">
+            <th mat-header-cell *matHeaderCellDef> Telefone </th>
+            <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="congregacao">
+            <th mat-header-cell *matHeaderCellDef> Congregação </th>
+            <td mat-cell *matCellDef="let element"> {{element.congregacao}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="cargo" >
+            <th mat-header-cell *matHeaderCellDef> Cargo </th>
+            <td  mat-cell *matCellDef="let element"class="cargo-column">
+              <span class="cargo-text">{{element.cargo}} </span>
+
+                <button mat-icon-button
+                  matTooltip="Excluir Membro"
+                  matTooltipPosition="above"
+                  (click)="excluirMembro(element)"
+                  class="btn-excluir">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+          </ng-container>
+
+
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
     </div>
-
-    <div>
-      <mat-form-field appearance="fill">
-        <mat-label>Pesquisar Membro</mat-label>
-       <input matInput [(ngModel)]="filtro" (keyup)="applyFilter(filtro)" placeholder="Digite o nome ou telefone">
-      </mat-form-field>
-    </div>
-<h2>Lista de membros</h2>
-    <table mat-table [dataSource]="dataSource" class="membros-tabela">
-      <!-- Position Column -->
-      <ng-container matColumnDef="Id">
-        <th mat-header-cell *matHeaderCellDef> N </th>
-        <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="nome">
-        <th mat-header-cell *matHeaderCellDef> Nome </th>
-        <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
-      </ng-container>
-
-      <!-- Weight Column -->
-      <ng-container matColumnDef="telefone">
-        <th mat-header-cell *matHeaderCellDef> Telefone </th>
-        <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="congregacao">
-        <th mat-header-cell *matHeaderCellDef> Congregação </th>
-        <td mat-cell *matCellDef="let element"> {{element.congregacao}} </td>
-      </ng-container>
-
-       <!-- Symbol Column -->
-      <ng-container matColumnDef="cargo">
-        <th mat-header-cell *matHeaderCellDef> Cargo </th>
-        <td mat-cell *matCellDef="let element"> {{element.cargo}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-
-</div>

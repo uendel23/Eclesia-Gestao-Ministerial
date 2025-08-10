@@ -7,6 +7,7 @@ import { MatFormFieldModule  } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 
 export interface membros{
@@ -39,26 +40,24 @@ const ELEMENT_DATA: membros[] = [
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatIconModule,
   ],
   templateUrl: './membros.html',
   styleUrl: './membros.scss'
 })
 export class Membros implements OnInit{
    filtro: string = '';
-  displayedColumns: string[] = ['Id', 'nome', 'telefone', 'congregacao' ,'cargo'];
+  displayedColumns: string[] = ['Id', 'nome', 'telefone', 'congregacao' ,'cargo',];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   ngOnInit() {
-    // Configura para buscar em nome, telefone, congregação e cargo
     this.dataSource.filterPredicate = (data: membros, filter: string) => {
       const texto = (
-        data.nome +
-        ' ' +
-        data.telefone +
-        ' ' +
-        data.congregacao +
-        ' ' +
+        data.nome +' ' +
+        data.telefone +' ' +
+        data.congregacao +' ' +
         data.cargo
+
       ).toLowerCase();
       return texto.includes(filter);
     };
@@ -72,9 +71,18 @@ export class Membros implements OnInit{
 
   openAddMemberDialog(){}
   openEditMemberDialog(){}
-  deleteSelectedMembers(){};
 
-
+  excluirMembro(membro: any) {
+  if (confirm(`Tem certeza que deseja excluir o membro "${membro.nome}"?`)) {
+    //TUDO OK, pode excluir
+    const dados = this.dataSource.data;
+    this.dataSource.data = dados.filter(m => m.Id !== membro.Id);
+    // ou chama um serviço:
+    // this.membroService.excluir(membro.Id).subscribe(...)
   }
+  }
+
+}
+
 
 

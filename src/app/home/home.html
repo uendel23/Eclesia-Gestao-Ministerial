@@ -1,25 +1,27 @@
-<div>
-  <mat-toolbar  class="toolbar">
-  <img [src]="'assets/Logotipo-Eclésia.png'" alt="Logo Eclesia" class="logo-eclesia" />
-    <span class="title">Eclésia-Gestão ministerial</span>
-    <span></span>
-    <span class="spacer"></span>
+<mat-toolbar color="primary" class="app-toolbar">
+  <img src="assets/Logotipo-Eclésia.png" alt="Logo" class="logo" />
 
-    <a matIconButton aria-label="icone de perfil">
-      <mat-icon class="icon" >account_circle</mat-icon></a>
+  <button class="titulo" routerLink="/dashboard"> <span class="title">Eclésia - Gestão ministerial</span></button>
+  <span class="spacer"></span>
 
-    <a matIconButton  aria-label="icone de notificações">
-      <mat-icon class="icon">notifications</mat-icon></a>
+  <button mat-icon-button aria-label="Perfil">
+    <mat-icon>account_circle</mat-icon>
+  </button>
 
-    <button matIconButton  aria-label="icone do menu" [matMenuTriggerFor]="menu">
-      <mat-icon class="icon">menu</mat-icon>  </button>
-      <mat-menu #menu="matMenu" xPosition="before" class="menu-lateral">
-          <button mat-menu-item >Secretaria</button>
-          <button mat-menu-item >Configurações</button>
-          <button mat-menu-item >Sair</button>
-      </mat-menu>
-  </mat-toolbar>
-</div>
+  <button mat-icon-button aria-label="Notificações">
+    <mat-icon>notifications</mat-icon>
+  </button>
+
+  <div >
+    <button mat-button [matMenuTriggerFor]="menu" ><mat-icon>menu</mat-icon></button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="goTo('secretaria')">Secretaria</button>
+      <button mat-menu-item (click)="goTo('configuracoes')">Configurações</button>
+      <button mat-menu-item (click)="logout()" class="logout">Sair</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
 
 <router-outlet></router-outlet>
 

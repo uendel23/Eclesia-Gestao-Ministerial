@@ -1,0 +1,96 @@
+<app-home></app-home>
+<div class="cadastro-container">
+    <mat-card class="form-card">
+      <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+        <mat-card-header>
+          <mat-card-title>Cadastro de Membro</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <!-- Dados Pessoais -->
+          <div class="section">
+            <h3>Dados Pessoais</h3>
+            <mat-form-field appearance="fill">
+              <mat-label>Nome Completo</mat-label>
+              <input matInput formControlName="nome" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Sexo</mat-label>
+              <mat-select formControlName="sexo" required>
+                <mat-option value="M">Masculino</mat-option>
+                <mat-option value="F">Feminino</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Data de Nascimento</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="dataNascimento" required />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Estado Civil</mat-label>
+              <mat-select formControlName="estadoCivil" required>
+                <mat-option value="solteiro">Solteiro</mat-option>
+                <mat-option value="casado">Casado</mat-option>
+                <mat-option value="divorciado">Divorciado</mat-option>
+                <mat-option value="viuvo">Viúvo</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <!-- Contato -->
+          <div class="section">
+            <h3>Contato</h3>
+            <mat-form-field appearance="fill">
+              <mat-label>Endereço</mat-label>
+              <input matInput formControlName="endereco" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Telefone</mat-label>
+              <input matInput formControlName="telefone" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>E-mail</mat-label>
+              <input matInput formControlName="email" required />
+            </mat-form-field>
+          </div>
+
+          <!-- Informações Eclesiásticas -->
+          <div class="section">
+            <h3>Informações Eclesiásticas</h3>
+            <mat-form-field appearance="fill">
+              <mat-label>Cargo</mat-label>
+              <input matInput formControlName="cargo" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Ministério</mat-label>
+              <input matInput formControlName="ministerio" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Célula</mat-label>
+              <input matInput formControlName="celula" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Batismo</mat-label>
+              <mat-select formControlName="batismo">
+                <mat-option value="sim">Sim</mat-option>
+                <mat-option value="nao">Não</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-raised-button  type="submit" [disabled]="!cadastroForm.valid">Cadastrar</button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+</div>

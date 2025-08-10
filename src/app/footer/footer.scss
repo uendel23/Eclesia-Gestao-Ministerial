@@ -1,0 +1,46 @@
+.app-footer {
+  background-color: #1e88e5; /* Azul Material */
+  color: white;
+  padding: 16px 24px;
+  font-size: 14px;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links a {
+  color: #bbdefb; /* Azul claro */
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .footer-links a {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+}

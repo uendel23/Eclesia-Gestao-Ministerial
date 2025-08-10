@@ -1,35 +1,41 @@
-.spacer{
+.app-toolbar {
+  background-color: #1e88e5;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 16px;
+  box-sizing: border-box;
+  height: 64px;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 12px;
+}
+
+.title {
+  color: rgb(247, 235, 235);
+  font-size: 1.5rem;
+  font-weight: 500;
+  white-space: nowrap;
+  background-color: #1e88e5;
+}
+.titulo {
+  background-color: #1e88e5;
+ border: none;
+ cursor: pointer;
+}
+
+.spacer {
   flex: 1 1 auto;
 }
 
-.toolbar {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background-color: #93D5FF;
-  color: #0a2c53;
-  height: 6rem;
+mat-icon {
+  color: rgb(215, 229, 241);
 }
-
-.title{
-  font-size: 1.5rem;
-  font-weight: calc(450 * 1.2);
-  padding-left: 1rem;
-}
-
-.icon {
-font-size: 2rem;
-padding: 1rem 1rem;
-}
-
-::ng-deep .mat-mdc-icon-button {
-  margin-left: 1rem;
-  margin-bottom: 3rem;
-}
-
-
-
-
 
 ::ng-deep.mat-mdc-menu-panel{
   margin-top: 1rem;
@@ -41,8 +47,8 @@ padding: 1rem 1rem;
   color: #0a2c53;
   background: #c1e2f5;
   font-size: 17px;
-  font-weight: 400;
-  padding: 20px 50px;
+  font-weight: 500;
+  padding: 25px 50px;
   text-decoration: inherit;
   text-transform: none;
 
@@ -53,6 +59,56 @@ padding: 1rem 1rem;
   color: #1976d2;
 }
 
+
+/* Tablets (largura até 900px)*/
+@media (max-width: 900px) {
+  .toolbar {
+    height: 5rem;
+    padding: 0 0.8rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    padding-left: 0.8rem;
+  }
+
+
+
+  ::ng-deep .mat-mdc-icon-button {
+    margin-left: 0.7rem;
+    margin-bottom: 2rem;
+  }
+
+  ::ng-deep .mat-mdc-menu-panel .mat-mdc-menu-item {
+    font-size: 15px;
+    padding: 16px 40px;
+  }
+}
+
+/* Celulares (largura até 600px) */
+ @media (max-width: 600px) {
+  .toolbar {
+    height: 4.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    padding-left: 0.5rem;
+  }
+
+
+
+  ::ng-deep .mat-mdc-icon-button {
+    margin-left: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  ::ng-deep .mat-mdc-menu-panel .mat-mdc-menu-item {
+    font-size: 14px;
+    padding: 12px 30px;
+  }
+}
 
 
 

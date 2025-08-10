@@ -14,5 +14,15 @@ import { RouterOutlet , RouterLink} from "@angular/router";
 
 })
 export class Home {
+  goTo(page: string) {
+  console.log('Navegar para:', page);
+  // Aqui navegue com Angular Router se quiser:
+  // this.router.navigate([page]);
+}
+
+logout() {
+  console.log('Fazer logout');
+  // Coloque sua lógica de logout aqui
+}
 
 }

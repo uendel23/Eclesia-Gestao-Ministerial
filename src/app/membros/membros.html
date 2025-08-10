@@ -1,10 +1,10 @@
 <app-home></app-home>
-
     <div class="membros-container">
+
         <h2>Lista de membros</h2>
 
         <div class="membros-actions">
-          <button mat-raised-button  (click)="openAddMemberDialog()">Adicionar Membro</button>
+          <button  routerLink="/cadastro" mat-raised-button  (click)="openAddMemberDialog()">Adicionar Membro</button>
           <button mat-raised-button  (click)="openEditMemberDialog()">Editar Membro</button>
         </div>
 
@@ -63,4 +63,11 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
 
+
     </div>
+
+
+
+<app-footer></app-footer>
+
+<router-outlet></router-outlet>

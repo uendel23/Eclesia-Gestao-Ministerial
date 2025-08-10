@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import {RouterOutlet, RouterLink } from '@angular/router';
+import { Footer } from '../footer/footer';
 
 
 export interface membros{
@@ -41,6 +43,9 @@ const ELEMENT_DATA: membros[] = [
     MatInputModule,
     FormsModule,
     MatIconModule,
+    RouterOutlet,
+    RouterLink,
+    Footer,
   ],
   templateUrl: './membros.html',
   styleUrl: './membros.scss'
